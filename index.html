@@ -2,34 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conversor de Bases Numéricas</title>
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <h1>Conversor de Bases Numéricas</h1>
 
-  <div class="container">
-    <label for="inputNumber">Digite o número:</label>
-    <input type="text" id="inputNumber" placeholder="Ex: 1010 ou 15" />
-
-    <label for="baseSelect">Escolha a base de entrada:</label>
-    <select id="baseSelect">
-      <option value="2">Binário</option>
-      <option value="8">Octal</option>
-      <option value="10" selected>Decimal</option>
-      <option value="16">Hexadecimal</option>
-    </select>
-
-    <button id="convertBtn">Converter</button>
-
-    <h2>Resultados</h2>
-    <p><strong>Decimal:</strong> <span id="decimal">—</span></p>
-    <p><strong>Binário:</strong> <span id="binario">—</span></p>
-    <p><strong>Octal:</strong> <span id="octal">—</span></p>
-    <p><strong>Hexadecimal:</strong> <span id="hexadecimal">—</span></p>
-  </div>
-
-  <script src="script.js"></script>
+  <label for="inputNumber">Digite o número:</label>
+  <input type="text" id="inputNumber" placeholder="Ex: 1010" />
 </body>
 </html>
