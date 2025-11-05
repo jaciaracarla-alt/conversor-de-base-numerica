@@ -1,25 +1,11 @@
-const btn = document.getElementById('convertBtn');
+// Captura dos elementos do DOM
+const inputNumber = document.getElementById('inputNumber');
+const baseSelect = document.getElementById('baseSelect');
+const convertBtn = document.getElementById('convertBtn');
 
-btn.addEventListener('click', () => {
-  const input = document.getElementById('inputNumber').value.trim();
-  const base = parseInt(document.getElementById('baseSelect').value);
+const decimalResult = document.getElementById('decimal');
+const binarioResult = document.getElementById('binario');
+const octalResult = document.getElementById('octal');
+const hexadecimalResult = document.getElementById('hexadecimal');
 
-  if (!input) {
-    alert('Por favor, digite um número!');
-    return;
-  }
-
-  let decimal;
-  try {
-    decimal = parseInt(input, base);
-    if (isNaN(decimal)) throw new Error();
-  } catch {
-    alert('Número inválido para a base selecionada!');
-    return;
-  }
-
-  document.getElementById('decimal').textContent = decimal.toString(10);
-  document.getElementById('binario').textContent = decimal.toString(2);
-  document.getElementById('octal').textContent = decimal.toString(8);
-  document.getElementById('hexadecimal').textContent = decimal.toString(16).toUpperCase();
-});
+console.log("Elementos do DOM capturados.");
