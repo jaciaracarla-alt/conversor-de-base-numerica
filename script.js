@@ -15,11 +15,24 @@ convertBtn.addEventListener('click', () => {
 
   const decimalValue = parseInt(numberStr, fromBase);
 
-  // 2. Converte o valor decimal para as outras bases
-  // Esta é a outra função-chave: numero.toString(baseDeDestino)
+  // Validação simples (se o valor for inválido, ex: "ABC" em base 10)
+  if (isNaN(decimalValue)) {
+    alert("Número inválido para a base selecionada.");
+    decimalResult.textContent = '—';
+    binarioResult.textContent = '—';
+    octalResult.textContent = '—';
+    hexadecimalResult.textContent = '—';
+    return;
+  }
+
+  // Converte para as outras bases
   const binarioValue = decimalValue.toString(2);
   const octalValue = decimalValue.toString(8);
-  const hexadecimalValue = decimalValue.toString(16).toUpperCase(); // .toUpperCase() para Ficar "A" e não "a"
+  const hexadecimalValue = decimalValue.toString(16).toUpperCase();
 
-  console.log(`Binário: ${binarioValue}, Octal: ${octalValue}, Hex: ${hexadecimalValue}`);
+  // 3. Exibe os resultados na tela
+  decimalResult.textContent = decimalValue.toString(10); // Mostra o próprio decimal
+  binarioResult.textContent = binarioValue;
+  octalResult.textContent = octalValue;
+  hexadecimalResult.textContent = hexadecimalValue;
 });
