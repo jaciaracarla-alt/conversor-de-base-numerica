@@ -11,11 +11,15 @@ const hexadecimalResult = document.getElementById('hexadecimal');
 
 convertBtn.addEventListener('click', () => {
   const numberStr = inputNumber.value;
-  const fromBase = parseInt(baseSelect.value, 10); // Converte "10" (string) para 10 (número)
+  const fromBase = parseInt(baseSelect.value, 10);
 
-  // 1. Converte o número de entrada (qualquer base) para Decimal (base 10)
-  // Esta é a função-chave: parseInt(string, baseDeOrigem)
   const decimalValue = parseInt(numberStr, fromBase);
 
-  console.log(`Valor em decimal: ${decimalValue}`);
+  // 2. Converte o valor decimal para as outras bases
+  // Esta é a outra função-chave: numero.toString(baseDeDestino)
+  const binarioValue = decimalValue.toString(2);
+  const octalValue = decimalValue.toString(8);
+  const hexadecimalValue = decimalValue.toString(16).toUpperCase(); // .toUpperCase() para Ficar "A" e não "a"
+
+  console.log(`Binário: ${binarioValue}, Octal: ${octalValue}, Hex: ${hexadecimalValue}`);
 });
