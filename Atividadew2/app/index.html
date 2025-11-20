@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Conversor de Bases Numéricas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>Conversor de Bases Numéricas</h1>
+
+  <!-- ============================== -->
+  <!-- SEÇÃO 1 — Conversor manual (SEU CÓDIGO ORIGINAL) -->
+  <!-- ============================== -->
+
+  <div class="container">
+    <h2>Conversão Manual</h2>
+
+    <label for="inputNumber">Digite o número:</label>
+    <input type="text" id="inputNumber" placeholder="Ex: 1010" />
+
+    <label for="baseSelect">Escolha a base de entrada:</label>
+    <select id="baseSelect">
+      <option value="2">Binário</option>
+      <option value="8">Octal</option>
+      <option value="10" selected>Decimal</option>
+      <option value="16">Hexadecimal</option>
+    </select>
+
+    <button id="convertBtn">Converter</button>
+
+    <h3>Resultados</h3>
+    <p><strong>Decimal:</strong> <span id="decimal">—</span></p>
+    <p><strong>Binário:</strong> <span id="binario">—</span></p>
+    <p><strong>Octal:</strong> <span id="octal">—</span></p>
+    <p><strong>Hexadecimal:</strong> <span id="hexadecimal">—</span></p>
+  </div>
+
+  <hr><br>
+
+  <!-- ============================== -->
+  <!-- SEÇÃO 2 — Upload de arquivo (NOVO PARA FASTAPI) -->
+  <!-- ============================== -->
+
+  <div class="container">
+    <h2>Processar Arquivo</h2>
+    <p>Envie um arquivo <strong>.txt</strong> ou <strong>.csv</strong> contendo números (um por linha), e o sistema converterá todas as bases.</p>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+      <label for="fileInput">Escolha o arquivo:</label>
+      <input type="file" id="fileInput" name="file" accept=".txt,.csv" required />
+
+      <label for="fromBase">Base de entrada:</label>
+      <select id="fromBase" name="from_base">
+        <option value="2">Binário (2)</option>
+        <option value="8">Octal (8)</option>
+        <option value="10" selected>Decimal (10)</option>
+        <option value="16">Hexadecimal (16)</option>
+      </select>
+
+      <button type="submit">Enviar e Processar</button>
+    </form>
+
+    <div id="result" style="margin-top: 15px; font-weight: bold;"></div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- SCRIPT PARA UPLOAD DE ARQUIVO (NOVO) -->
+  <script>
+    const form = document.getElementById('uploadForm');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const fileInput = document.getElementById('fileInput');
+      const fromBase = document.getElementById('fromBase').value;
+
+      const formData = new FormData();
+      formData.append('file', fileInput.files[0]);
+      formData.append('from_base', fromBase);
+
+      document.getElementById('result').innerHTML = "Processando...";
+
+      const res = await fetch('/upload', {
+        method: 'POST',
+        body: formData
+      });
+
+      const json = await res.json();
+
+      if (res.ok) {
+        document.getElementById('result').innerHTML = `
+          Arquivo processado com sucesso!<br><br>
+          👉 <a href="${json.csv}" download>Baixar CSV convertido</a><br>
+          👉 <a href="${json.json}" download>Baixar JSON convertido</a>
+        `;
+      } else {
+        document.getElementById('result').innerText = 'Erro ao processar arquivo.';
+      }
+    });
+  </script>
+
+</body>
+</html>

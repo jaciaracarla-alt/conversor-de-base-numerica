@@ -1,0 +1,141 @@
+/* 🌈 Fundo fofinho em degrade pastel */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, #ffe6f2, #e6f0ff, #fff4e6);
+  color: #444;
+  margin: 0;
+  padding: 30px;
+}
+
+/* ✨ Título principal */
+.title, h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: #ff66a3;
+  text-shadow: 0px 2px 6px rgba(255, 182, 193, 0.8);
+}
+
+/* 💝 Caixas principais (card pastel fofinho) */
+.card, .container {
+  background: #ffffffcc;
+  backdrop-filter: blur(6px);
+  padding: 25px;
+  max-width: 420px;
+  margin: 25px auto;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(255, 138, 197, 0.35);
+  border: 2px solid #ffd6ea;
+}
+
+/* 💕 Títulos de seção */
+.section-title, h2 {
+  text-align: center;
+  color: #ff4d94;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Inputs fofinhos */
+label {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 2px solid #ffd1e8;
+  background: #fff;
+  transition: 0.3s;
+  font-size: 15px;
+}
+
+input:focus,
+select:focus {
+  border-color: #ff66b2;
+  box-shadow: 0 0 8px rgba(255, 102, 178, 0.4);
+  outline: none;
+}
+
+/* 🌸✨ BOTÕES SUPER FOFOS ✨🌸 */
+.btn, button {
+  background: linear-gradient(135deg, #ff9cd6, #ff6fc5);
+  color: white;
+  padding: 14px;
+  border-radius: 30px;
+  width: 100%;
+  margin-top: 15px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 4px 12px rgba(255, 111, 197, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ✨ glitter no hover */
+.btn:hover, button:hover {
+  background: linear-gradient(135deg, #ff6fc5, #ff4db8);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(255, 100, 185, 0.55);
+}
+
+/* 🌟 Adesivo/emoji decorativo no botão */
+.btn::after, button::after {
+  content: "✨💖";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+/* Efeito brilho pulsante */
+@keyframes glitter {
+  0%   { box-shadow: 0 0 8px #ffb3e6; }
+  50%  { box-shadow: 0 0 16px #ff99dd; }
+  100% { box-shadow: 0 0 8px #ffb3e6; }
+}
+
+.btn:hover, button:hover {
+  animation: glitter 1.2s infinite;
+}
+
+/* 🌈 Resultados */
+.result-title {
+  margin-top: 15px;
+  color: #ff66b2;
+  text-align: center;
+}
+
+/* Links de download fofos */
+.link-download {
+  color: #ff4da6;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 6px 0;
+  display: inline-block;
+}
+
+.link-download:hover {
+  text-decoration: underline;
+}
+
+/* Caixa de mensagens bonitinha */
+.result-msg, #result {
+  margin-top: 15px;
+  padding: 12px;
+  text-align: center;
+  background: #ffe6f7;
+  border-radius: 12px;
+  border: 1px solid #ffcce6;
+  box-shadow: inset 0 0 6px rgba(255, 150, 200, 0.2);
+  font-weight: 600;
+}
