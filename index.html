@@ -3,32 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <title>Conversor de Bases Numéricas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Conversor de Bases Numéricas</h1>
 
-  <label for="inputNumber">Digite o número:</label>
-  <input type="text" id="inputNumber" placeholder="Ex: 1010" />
-  <br><br>
-  
-  <label for="baseSelect">Escolha a base de entrada:</label>
-  <select id="baseSelect">
-    <option value="2">Binário</option>
-    <option value="8">Octal</option>
-    <option value="10" selected>Decimal</option>
-    <option value="16">Hexadecimal</option>
-  </select>
-  <br><br>
+  <div class="container cute-card">
+    <h1 class="cute-title">💗 Conversor de Bases 💗</h1>
 
-  <button id="convertBtn">Converter</button>
+    <label for="inputNumber">Digite o número:</label>
+    <input type="text" id="inputNumber" placeholder="Ex: 1010" class="cute-input"/>
 
-  <h2>Resultados</h2>
-  <p><strong>Decimal:</strong> <span id="decimal">—</span></p>
-  <p><strong>Binário:</strong> <span id="binario">—</span></p>
-  <p><strong>Octal:</strong> <span id="octal">—</span></p>
-  <p><strong>Hexadecimal:</strong> <span id="hexadecimal">—</span></p>
+    <label for="baseSelect">Escolha a base de entrada:</label>
+    <select id="baseSelect" class="cute-input">
+      <option value="2">Binário</option>
+      <option value="8">Octal</option>
+      <option value="10" selected>Decimal</option>
+      <option value="16">Hexadecimal</option>
+    </select>
+
+    <button id="convertBtn" class="cute-btn">✨ Converter ✨</button>
+
+    <h2 class="cute-subtitle">Resultados</h2>
+    <p><strong>Decimal:</strong> <span id="decimal">—</span></p>
+    <p><strong>Binário:</strong> <span id="binario">—</span></p>
+    <p><strong>Octal:</strong> <span id="octal">—</span></p>
+    <p><strong>Hexadecimal:</strong> <span id="hexadecimal">—</span></p>
+  </div>
 
   <script src="script.js"></script>
-</body>
 </body>
 </html>
