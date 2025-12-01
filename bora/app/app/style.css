@@ -1,0 +1,121 @@
+/* style.css — tema fofinho (pastel, sombras suaves, botões com emoji) */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg1: #fff0f6;
+  --bg2: #f0f8ff;
+  --card: #ffffffee;
+  --accent: #ff66a3;
+  --accent-2: #ff9cd6;
+  --muted: #6b6b7a;
+}
+
+/* Global */
+* { box-sizing: border-box; }
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  color: #333;
+  margin: 0;
+  padding: 28px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 2.1rem;
+  color: var(--accent);
+  margin: 6px 0 18px;
+  text-shadow: 0 3px 10px rgba(255,150,190,0.12);
+}
+
+/* Card container */
+.container {
+  background: var(--card);
+  max-width: 520px;
+  margin: 18px auto;
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 200, 220, 0.6);
+  box-shadow:
+    0 10px 30px rgba(255,120,180,0.08),
+    inset 0 -6px 12px rgba(255,190,220,0.04);
+}
+
+/* Section heading */
+.container h2 {
+  text-align: center;
+  color: var(--accent);
+  margin: 0 0 12px;
+  font-size: 1.2rem;
+}
+
+/* Labels & inputs */
+label { display:block; margin-top:12px; font-weight:600; color:var(--muted); }
+input[type="text"], input[type="file"], select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 8px;
+  border-radius: 12px;
+  border: 2px solid #ffdce8;
+  background: #fff;
+  font-size: 14px;
+  transition: box-shadow .18s, transform .12s;
+}
+input[type="text"]:focus, select:focus {
+  outline: none;
+  box-shadow: 0 6px 18px rgba(255,120,180,0.18);
+  transform: translateY(-2px);
+}
+
+/* Results */
+.container p { margin: 10px 0; background:#fffafc; padding:10px; border-radius:10px; border:1px solid #ffeef6; }
+.result-link { display:inline-block; margin-top:8px; color:var(--accent); font-weight:700; text-decoration:none; }
+
+/* Button base */
+button, .btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-top: 14px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  box-shadow:
+    0 8px 22px rgba(255,110,180,0.22),
+    inset 0 -4px 10px rgba(255,80,160,0.12);
+  transition: transform .14s ease, box-shadow .14s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Emoji sticker on button */
+button::after, .btn::after {
+  content: " ✨💕";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.9;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 12px 32px rgba(255,100,170,0.28),
+    inset 0 -3px 10px rgba(255, 120, 180, 0.08);
+}
+
+/* Small responsive tweaks */
+@media (max-width: 540px){
+  .container { margin: 16px; padding: 18px; }
+  .title { font-size: 1.8rem; }
+}
