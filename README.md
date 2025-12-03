@@ -34,3 +34,4 @@ Aplicação simples em HTML, CSS e JavaScript para converter números entre base
 
 ---
 
+TESTE DE SINCRONIZACAO
